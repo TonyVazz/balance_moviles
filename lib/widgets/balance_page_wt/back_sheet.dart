@@ -1,3 +1,4 @@
+import 'package:balance/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class BackSheet extends StatelessWidget {
@@ -5,40 +6,46 @@ class BackSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _cabeceras(String nombre, String cantidad) {
+    _cabeceras(String nombre, String cantidad, Color color) {
       return Column(
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 13, bottom: 5),
             child: Text(
               nombre,
-              style: TextStyle(
+              style: const  TextStyle(
                 fontSize: 18,
                 letterSpacing: 1.5,
-                color: Theme.of(context).cardColor,
+                
               ),
             ),
           ),
           Text(
             cantidad,
-            style: TextStyle(
+            style:  TextStyle(
                 fontSize: 20,
                 letterSpacing: 1.5,
-                color: Theme.of(context).cardColor),
+                color: color),
           )
         ],
       );
     }
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        _cabeceras('Ingresos', '\$ 1,500.00'),
-        const VerticalDivider(
-          thickness: 2,
-        ),
-        _cabeceras('Gastos', '\$ 1,499.00'),
-      ],
+    return Container(
+      height: 250,
+            decoration: Constants.sheetBoxDecoration(
+              Theme.of(context).primaryColorDark
+            ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          _cabeceras('Ingresos', '\$ 1,500.00', Colors.green),
+          const VerticalDivider(
+            thickness: 2,
+          ),
+          _cabeceras('Gastos', '\$ 1,499.00', Colors.blue),
+        ],
+      ),
     );
   }
 }

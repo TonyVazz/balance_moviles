@@ -3,13 +3,18 @@ import 'package:balance/pages/configuracion_page.dart';
 import 'package:balance/pages/graficos_page.dart';
 import 'package:balance/widgets/home_page_wt/CustomNavigatorBar.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../provider/ui_provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+
+    return  Scaffold(
       bottomNavigationBar: CustomNavigatorBar(),
       body: _HomePage(),
     );
@@ -21,8 +26,10 @@ class _HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const indiceActual = 0;
-    switch (indiceActual) {
+     final uiProvider = Provider.of<UIProvider>(context);
+     final currenIndex = uiProvider.bnbIndex;
+   
+    switch (currenIndex) {
       case 0:
         return const BalancePage();
       case 1:
