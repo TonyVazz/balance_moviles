@@ -25,7 +25,7 @@ class FrontSheet extends StatelessWidget {
                       decoration: Constants.sheetBoxDecoration(Theme.of(context).scaffoldBackgroundColor),
                       child:  ListView(
                         shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         children: _list,
                       ),
                     );

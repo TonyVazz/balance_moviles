@@ -7,11 +7,11 @@ class AddExpenses extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text('Agrega Gastos'),
+        title: const Text('Agrega Gastos'),
       ),
-      body: Center(
+      body: const Center(
         
-        child: Text('Desde Gastos')
+        child:  Text('Desde Gastos')
       )
     );
   }

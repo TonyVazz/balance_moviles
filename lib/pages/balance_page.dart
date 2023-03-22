@@ -19,7 +19,7 @@ class _BalancePageState extends State<BalancePage> {
   void _escucha() {
     setState(() {
       _desplazamiento = _scrollController.offset / 100;
-      print(_max);
+      // print(_max);
     });
   }
 
@@ -43,7 +43,7 @@ class _BalancePageState extends State<BalancePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        floatingActionButton: CustomFAB(),
+        floatingActionButton: const CustomFAB(),
         body: CustomScrollView(
           controller: _scrollController,
           slivers: [
