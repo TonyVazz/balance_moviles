@@ -108,7 +108,9 @@ class _BSNumKeyboardState extends State<BSNumKeyboard> {
                         TableRow(
                           children: [
                             _num('.', _height),
+                            ////////
                             _num('0', _height),
+                            ////////
                             GestureDetector(
                               behavior: HitTestBehavior.opaque,
                               onLongPress: () {
@@ -137,54 +139,53 @@ class _BSNumKeyboardState extends State<BSNumKeyboard> {
                       ],
                     ),
                     //aqui inician los botones agregados
-                     Row(
-                       children: [
-                         Padding(
-                            padding: const EdgeInsets.only(right: 560.0, left: 8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Theme.of(context).primaryColorDark,
-                                borderRadius: BorderRadius.circular(17),
-                              ),
-                              child: TextButton(
-                                onPressed: (() {
-                                  
-                                }),
-                                child: const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Center(
-                                          child: Text(
-                                        'Aceptar',
-                                        style: TextStyle(color: Colors.white, fontSize: 30),
-                                  )),
-                                ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).primaryColorDark,
+                              borderRadius: BorderRadius.circular(17),
+                            ),
+                            child: TextButton(
+                              onPressed: (() {}),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Center(
+                                    child: Text(
+                                  'Aceptar',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30),
+                                )),
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Theme.of(context).primaryColorDark,
-                                borderRadius: BorderRadius.circular(17),
-                              ),
-                              child: TextButton(
-                                onPressed: (() {
-                                  
-                                }),
-                                child: const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Center(
-                                          child: Text(
-                                        'Cancelar',
-                                        style: TextStyle(color: Colors.white, fontSize: 30),
-                                  )),
-                                ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).primaryColorDark,
+                              borderRadius: BorderRadius.circular(17),
+                            ),
+                            child: TextButton(
+                              onPressed: (() {}),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Center(
+                                    child: Text(
+                                  'Cancelar',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30),
+                                )),
                               ),
                             ),
                           ),
-                       ],
-                     ), //aqui terminan los botones agregados
+                        ),
+                      ],
+                    ), //aqui terminan los botones agregados
                   ],
                 );
               },
