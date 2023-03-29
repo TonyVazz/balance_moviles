@@ -43,6 +43,8 @@ class _BSNumKeyboardState extends State<BSNumKeyboard> {
 
   _numPad() {
     if (importe == '0.00') importe = '';
+    
+    RegExp regex = RegExp(r'^\d{0,12}(\.\d{0,2})?$'); // Expresión regular
 
     _num(String _text, double _height) {
       return GestureDetector(
@@ -50,7 +52,14 @@ class _BSNumKeyboardState extends State<BSNumKeyboard> {
         onTap: () {
           setState(() {
             if (importe == '0.00') importe = '';
-            importe += _text;
+            if (importe.contains(".") && _text == ".") {
+              
+              return; // Si ya hay un punto decimal en el importe, no se permite agregar otro
+            }
+            String newImporte = importe + _text;
+            if (regex.hasMatch(newImporte)) {
+              importe = newImporte; // Si el nuevo importe coincide con la expresión regular, se permite agregar el dígito
+            }
           });
         },
         child: SizedBox(
